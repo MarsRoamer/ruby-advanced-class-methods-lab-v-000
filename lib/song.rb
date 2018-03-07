@@ -51,7 +51,8 @@ class Song
   end
 
   def self.alphabetical
-     @@all.sort_by(&:name)
+    @@all.sort_by{|name| name}
+    #  @@all.sort_by(&:name)
    end
 
    def self.new_from_filename(str)
@@ -64,6 +65,10 @@ class Song
     #  song = self.new
     #  song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
     #  song.artist_name = str.match(/^[\w\-]+/)
+   end
+
+   def self.create_from_filename(str)
+
    end
 
 end
