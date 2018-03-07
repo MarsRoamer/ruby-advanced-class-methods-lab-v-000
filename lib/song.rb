@@ -59,7 +59,7 @@ class Song
      song = song_name.gsub('.mp3', '')
      new_song = Song.create
      new_song.name = song
-     new_song.artist_name
+     new_song.artist_name = artist_name
      new_song
     #  song = self.new
     #  song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
