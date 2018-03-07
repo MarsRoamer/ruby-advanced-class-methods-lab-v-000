@@ -18,7 +18,7 @@ class Song
   def self.create
     song = self.new
     song.save
-    return song
+    song
   end
 
   def self.new_by_name(song_name)
@@ -55,10 +55,12 @@ class Song
    end
 require 'pry'
    def self.new_from_filename(str)
+     artist_name, song_name = str.split(' - ')
+     song = song_name.gsub('.mp3', '')
      binding.pry
-     song = self.new
-     song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
-     song.artist_name = str.match(/^[\w\-]+/)
+    #  song = self.new
+    #  song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
+    #  song.artist_name = str.match(/^[\w\-]+/)
    end
 
 end
