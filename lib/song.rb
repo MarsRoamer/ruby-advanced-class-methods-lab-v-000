@@ -55,6 +55,7 @@ class Song
    end
 
    def self.new_from_filename(str)
+     song = self.new
      song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
      song.artist_name = str.match(/^[\w\-]+/)
    end
