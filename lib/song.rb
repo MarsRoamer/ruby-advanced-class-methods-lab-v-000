@@ -53,11 +53,14 @@ class Song
   def self.alphabetical
      @@all.sort_by(&:name)
    end
-require 'pry'
+
    def self.new_from_filename(str)
      artist_name, song_name = str.split(' - ')
      song = song_name.gsub('.mp3', '')
-     binding.pry
+     new_song = Song.create
+     new_song.name = song
+     new_song.artist_name
+     new_song
     #  song = self.new
     #  song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
     #  song.artist_name = str.match(/^[\w\-]+/)
