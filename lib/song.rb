@@ -74,4 +74,8 @@ class Song
      new_song.artist_name = artist_name
    end
 
+   def self.destroy_all
+     @@all = []
+   end
+
 end
