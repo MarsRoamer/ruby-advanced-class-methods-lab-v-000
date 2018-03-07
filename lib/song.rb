@@ -54,5 +54,9 @@ class Song
      @@all.sort_by(&:name)
    end
 
+   def create_from_filename(str)
+     song.name = str.match(/(?<=-\s).*?(?=\.mp3)/)
+     song.artist_name = str.match(/^[\w\-]+/)
+   end
 
 end
